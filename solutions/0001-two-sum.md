@@ -23,6 +23,7 @@ class Solution {
 
 ### Time and Space Complexity
 
+n = size of the numbers array
 - Time: `O(n)`
 - Space: `O(n)`
 
