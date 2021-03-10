@@ -23,8 +23,8 @@ class Solution {
 
 ### Time and Space Complexity
 
-n = total character of target string `t`
-- Time: `O(n)`
+N = total character of target string `t`
+- Time: `O(N)`
 - Space: `O(1)`
 
 ## References

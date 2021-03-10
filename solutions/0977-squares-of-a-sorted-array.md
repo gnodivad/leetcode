@@ -27,9 +27,9 @@ class Solution {
 
 ### Time and Space Complexity
 
-n = length of the array `nums`
-- Time: `O(n)`
-- Space: `O(n)`
+N = length of the array `nums`
+- Time: `O(N)`
+- Space: `O(N)`
 
 ## References
 - [AlgoExpert](https://www.algoexpert.io/questions/Sorted%20Squared%20Array)

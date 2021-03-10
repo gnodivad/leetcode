@@ -44,9 +44,9 @@ class Solution {
 
 ### Time and Space Complexity
 
-k = height of binary tree
-- Time: `O(log(h))`
-- Space: `O(log(h))`
+H = height of binary tree
+- Time: `O(log(H))`
+- Space: `O(log(H))`
 
 ## Approach 2: Binary Search by interactive
 Same as approach above, but travel the tree in interactive. This will save space complexity because this approach is not passing `closest` for every function call like above.
@@ -92,8 +92,8 @@ class Solution {
 
 ### Time and Space Complexity
 
-k = height of binary tree
-- Time: `O(log(h))`
+H = height of binary tree
+- Time: `O(log(H))`
 - Space: `O(1)`
 
 ## References

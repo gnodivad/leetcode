@@ -23,9 +23,9 @@ class Solution {
 
 ### Time and Space Complexity
 
-n = size of the numbers array
-- Time: `O(n)`
-- Space: `O(n)`
+N = size of the numbers array
+- Time: `O(N)`
+- Space: `O(N)`
 
 ## References
 - [AlgoExpert](https://www.algoexpert.io/questions/Two%20Number%20Sum)

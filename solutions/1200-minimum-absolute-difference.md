@@ -30,8 +30,8 @@ class Solution {
 
 ### Time and Space Complexity
 
-n = length of the array `arr`
-- Time: `O(nlog(n))`
+N = length of the array `arr`
+- Time: `O(Nlog(N))`
 - Space: `O(1)`
 
 ## References

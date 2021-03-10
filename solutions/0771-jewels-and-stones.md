@@ -25,9 +25,9 @@ class Solution {
 
 ### Time and Space Complexity
 
-n = number of stones, k = number of jewels
-- Time: `O(n)`
-- Space: `O(k)`
+N = number of stones, K = number of jewels
+- Time: `O(N)`
+- Space: `O(K)`
 
 ## References
 - None

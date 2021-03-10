@@ -27,8 +27,8 @@ class Solution {
 
 ### Time and Space Complexity
 
-n = size of the numbers array
-- Time: `O(n)`
+N = size of the numbers array
+- Time: `O(N)`
 - Space: `O(1)`
 
 ## References
