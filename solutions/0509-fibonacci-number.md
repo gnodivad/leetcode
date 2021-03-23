@@ -50,5 +50,31 @@ N = Nth of fibonacci number
 - Time: `O(N)`
 - Space: `O(N)`
 
+## Approach : Recursion
+The computation of nth fibonacci only care about `n-1`th fibonacci number and `n-2`th fibonacci number. We just need store both of them in an array that have length 2 and updating them as we iterate to `n`.
+
+```java
+class Solution {
+    public int fib(int n) {
+        int[] memo = {0, 1};
+        
+        int counter = 2;
+        while (counter <= n) {
+            int result = memo[0] + memo[1];
+            memo[0] = memo[1];
+            memo[1] = result;
+            counter++;
+        }
+        
+        return n > 0 ? memo[1] : memo[0];
+    }
+}
+```
+
+### Time and Space Complexity
+N = Nth of fibonacci number
+- Time: `O(N)`
+- Space: `O(1)`
+
 ## References
 - [AlgoExpert](https://www.algoexpert.io/questions/Nth%20Fibonacci)
