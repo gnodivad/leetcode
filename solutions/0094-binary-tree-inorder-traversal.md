@@ -67,20 +67,30 @@ Use Morris Traversal to traverse all the nodes in tree. Morris Traversal will al
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> nodes = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
         
-        inorderTraversal(root, nodes);
+        TreeNode curr = root;
+        TreeNode pre;
         
-        return nodes;
-    }
-    
-    public void inorderTraversal(TreeNode node, List<Integer> array) {
-        if (node == null) return;
+        while (curr != null) {
+            if (curr.left == null) {
+                res.add(curr.val);
+                curr = curr.right;
+            } else {
+                pre = curr.left;
+                while (pre.right != null) {
+                    pre = pre.right;
+                }
+                
+                pre.right = curr;
+                TreeNode temp = curr;
+                curr = curr.left;
+                temp.left = null;
+            }
+        }
         
-        inorderTraversal(node.left, array);
-        array.add(node.val);
-        inorderTraversal(node.right, array);
-    }
+        return res;
+    }    
 }
 ```
 
