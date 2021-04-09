@@ -54,5 +54,58 @@ N = number of nodes in the tree
 - Time: `O(N)`
 - Space: `O(N)`
 
+## Approach 2: Interative
+
+```Java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        int sum = 0;
+        Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+        
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            
+            if (node == null) continue;
+            
+            if (low <= node.val && node.val <= high) {
+                sum += node.val;
+            }
+            
+            if (low < node.val) {
+                stack.push(node.left);
+            }
+            
+            if (node.val < high) {
+                stack.push(node.right);
+            }
+        }
+        
+        return sum;
+    }
+}
+```
+
+### Time and Space Complexity
+
+N = number of nodes in the tree
+- Time: `O(N)`
+- Space: `O(N)`
+
 ## References
 - None
