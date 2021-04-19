@@ -1,6 +1,6 @@
 # 1008. Construct Binary Search Tree from Preorder Traversal
 
-## Basic Idea
+## Idea
 The preorder traversal will print out the node value first, then all the node value in left subtree and then all the node value in right subtree. By knowing this, we can conclude that the first element in the preorder array will always be the root. The problem is how we differentiate the left subtree and right subtree value for that root value.
 
 ## Approach 1
