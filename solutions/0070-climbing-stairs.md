@@ -32,5 +32,39 @@ N = length of the array `n`
 - Time: `O(N)`
 - Space: `O(N)`
 
+
+## Approach 2: Dynamic Programming
+The problem can broken into subproblems, and optimal solution can be constructed efficiently from optimal solutions of its subproblem. Everyone can reach `ith` by following way:
+1. Taking a single step from `(i - 1)th step`
+2. Taking a step of 2 from `(i - 2)th step`
+So, the total number of ways to reach `ith` is equal to sum of ways of reach `(i - 1)th` step and ways of reaching `(i - 2)th` step.
+`dp[i] = dp[i - 1] + dp[i - 2]`
+
+```Java
+class Solution {
+    public int climbStairs(int n) {     
+        if (n == 1) {
+            return 1;
+        }
+        
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        dp[2] = 2;
+        
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        
+        return dp[n];
+    }
+}
+```
+
+### Time and Space Complexity
+
+N = length of the array `n`
+- Time: `O(N)`
+- Space: `O(N)`
+
 ## References
 - None
