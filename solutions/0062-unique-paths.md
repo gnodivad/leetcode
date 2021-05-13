@@ -32,5 +32,49 @@ class Solution {
 - Time: `O(M * N)`
 - Space: `O(M * N)`
 
+## Approach 2: Dynamic Programming with optimized space
+Looking at approach 1, we know that we just need to keep track of 2 rows. One row is for upper cell and another row is for left cell. The space can optimize further when we choose the lower value among `m` or `n` as x-axis.
+
+```Java
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int y = m > n ? m : n;
+		int x = m <= n ? m : n;
+		
+		int[] evenEdits = new int[x];
+		int[] oddEdits = new int[x];
+		
+		for (int i = 0; i < x; i++) {
+			evenEdits[i] = 1;
+		}
+		
+		int[] currentEdits;
+		int[] previousEdits;
+		for (int i = 1; i < y; i++) {
+			if (i % 2 == 0) {
+				previousEdits = oddEdits;
+				currentEdits = evenEdits;
+			} else {
+				previousEdits = evenEdits;
+				currentEdits = oddEdits;
+			}
+			
+			currentEdits[0] = 1;
+			
+			for (int j = 1; j < x; j++) {
+				currentEdits[j] = previousEdits[j] + currentEdits[j - 1];
+			}
+		}
+		
+        return (y - 1) % 2 == 0 ? evenEdits[x - 1] : oddEdits[x - 1];
+    }
+}
+```
+
+### Time and Space Complexity
+
+- Time: `O(M * N)`
+- Space: `O(min(M, N))`
+
 ## References
 - [AlgoExpert](https://www.algoexpert.io/questions/Number%20Of%20Ways%20To%20Traverse%20Graph)
