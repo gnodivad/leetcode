@@ -50,6 +50,7 @@
 | 287  |   Medium   |                                                   [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number)                                                    |                          [<img height=20 src="icons/java.svg">](solutions/0287-find-the-duplicate-number.md)                          |                          Array, HashSet                          |
 | 322  |   Medium   |                                                                 [Coin Change](https://leetcode.com/problems/coin-change)                                                                  |                                 [<img height=20 src="icons/java.svg">](solutions/0322-coin-change.md)                                 |                       Dynamic Programming                        |
 | 346  |    Easy    |                                             [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream)                                              |                       [<img height=20 src="icons/java.svg">](solutions/0287-moving-average-from-data-stream.md)                       |                              Queue                               |
+| 349  |    Easy    |                                                  [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays)                                                   |                         [<img height=20 src="icons/java.svg">](solutions/0349-intersection-of-two-arrays.md)                          |                              Array                               |
 | 359  |    Easy    |                                                         [Logger Rate Limiter](https://leetcode.com/problems/logger-rate-limiter)                                                          |                             [<img height=20 src="icons/java.svg">](solutions/0359-logger-rate-limiter.md)                             |                             HashMap                              |
 | 387  |    Easy    |                                          [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string)                                           |                     [<img height=20 src="icons/java.svg">](solutions/0387-first-unique-character-in-a-string.md)                      |                              String                              |
 | 392  |    Easy    |                                                              [Is Subsequence](https://leetcode.com/problems/is-subsequence)                                                               |                               [<img height=20 src="icons/java.svg">](solutions/0392-is-subsequence.md)                                |                       Array, Two Pointers                        |
@@ -109,3 +110,15 @@
 | 1757 |    Easy    |                                             [Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products)                                              |                       [<img height=20 src="icons/sql.svg">](solutions/1757-recyclable-and-low-fat-products.md)                        |                               SQL                                |
 | 1821 |    Easy    |                              [Find Customers With Positive Revenue this Year](https://leetcode.com/problems/find-customers-with-positive-revenue-this-year)                               |                [<img height=20 src="icons/sql.svg">](solutions/1821-find-customers-with-positive-revenue-this-year.md)                |                               SQL                                |
 | 1853 |    Easy    |                                                         [Convert Date Format](https://leetcode.com/problems/convert-date-format)                                                          |                             [<img height=20 src="icons/sql.svg">](solutions/1853-convert-date-format.md)                              |                               SQL                                |
+
+## Snippets
+### Convert List<Integer> to int[]
+```java
+List<Integer> list = new ArrayList<>();
+int[] array = list.stream().mapToInt(i->i).toArray();
+```
+### Convert int[] to List<Integer>
+```java
+int[] nums = new int[]{1, 2, 3};
+List<Integer> numList = Arrays.stream(nums).boxed().collect(Collectors.toList());
+```
