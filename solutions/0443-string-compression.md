@@ -29,7 +29,7 @@ class Solution {
 ```
 
 ### Time and Space Complexity
-N = Lenght of the array `chars`
+N = Length of the array `chars`
 - Time: `O(N)`
 - Space: `O(1)`
 
